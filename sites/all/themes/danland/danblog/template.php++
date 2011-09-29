@@ -1,0 +1,25 @@
+<?php
+// $Id: template.php,v 1.1.2.1 2010/11/11 14:08:01 danprobo Exp $
+
+function danblog_preprocess_html(&$variables) {
+  drupal_add_css(path_to_theme() . '/style.ie6.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'IE 6', '!IE' => FALSE), 'preprocess' => FALSE));
+}
+
+/**
+ * Return a themed breadcrumb trail.
+ *
+ * @param $breadcrumb
+ *   An array containing the breadcrumb links.
+ * @return a string containing the breadcrumb output.
+ */
+/*
+function phptemplate_breadcrumb($breadcrumb) {
+  if (!empty($breadcrumb)) {
+    $title = drupal_get_title();
+    if (!empty($title)) {
+      $breadcrumb[] = '<div class="breadcrumb-current">'. $title .'</div>';
+    }
+    return '<div class="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
+  }
+}*/
+?>

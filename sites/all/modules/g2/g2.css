@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+/**
+ * 
+ * @file
+ * Default stylesheet for G2 Glossary module
+ *
+ * @copyright Copyright (C) 2005-2011 Frederic G. MARAND for Ouest Systèmes Informatiques (OSInet, OSI)
+ *
+ * @license Licensed under the CeCILL, version 2 and General Public License version 2 or later
+ *
+ * License note: G2 is distributed by OSInet to its customers under the
+ * CeCILL 2.0 license. OSInet support services only apply to the module
+ * when distributed by OSInet, not by any third-party further down the
+ * distribution chain.
+ *
+ * If you obtained G2 from drupal.org, that site received it under the General
+ * Public License version 2 or later (GPLv2+) and can therefore distribute it
+ * under the same terms, and so can you and just anyone down the chain as long
+ * as the GPLv2+ terms are abided by, the module distributor in that case being
+ * the drupal.org organization or the downstream distributor, not OSInet.
+ */
+
+.g2-entries div.more-link {
+  display: inline;
+  margin: 0 0 0 1em;
+}
+
+.g2-extra-title {
+  display: none;
+}

@@ -1,0 +1,12 @@
+Taxonomy Menu Trails 7.x-1.1, 2011-04-22
+----------------------------------------------
+Issue #1133686 Dmitriy.trt: fix WSOD for cached forms we alter
+
+Taxonomy Menu Trails 7.x-1.0, 2011-04-17
+----------------------------------------------
+Issue #1071154 by mikewink, Dmitriy.trt: Initial port to D7
+by mikewink, Dmitriy.trt: Vertical tab summary for node type form
+by markabur, Dmitriy.trt: workaround for Menu Block support
+New method of active trail changing (possible in D7 only)
+"Deepest-in-menu" term selection method
+Select from menu items rather than terms

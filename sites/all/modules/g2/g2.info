@@ -1,0 +1,44 @@
+; Information file for the G2 Glossary module
+;
+;
+; @copyright Copyright (C) 2005-2011 Frederic G. MARAND for Ouest Systèmes Informatiques (OSInet, OSI)
+;
+; @license Licensed under the CeCILL, version 2 and General Public License version 2 or later
+;
+; License note: G2 is distributed by OSInet to its customers under the
+; CeCILL 2.0 license. OSInet support services only apply to the module
+; when distributed by OSInet, not by any third-party further down the
+; distribution chain.
+;
+; If you obtained G2 from drupal.org, that site received it under the General
+; Public License version 2 or later (GPLv2+) and can therefore distribute it
+; under the same terms, and so can you and just anyone down the chain as long
+; as the GPLv2+ terms are abided by, the module distributor in that case being
+; the drupal.org organization or the downstream distributor, not OSInet.
+
+name = "G2 glossary"
+description = "Manage a node-based glossary"
+dependencies[] = taxonomy
+package = Content
+core = 7.x
+; closures and namespaces require 5.3
+; see g2\* constants and _g2_stats() 
+php = 5.3
+configure = admin/config/content/g2
+
+dependencies[] = context
+
+files[] = tests/access.test
+files[] = tests/issues.test
+
+; G2 is expected to be a major feature on sites where it is present, hence
+; its content will be present on most pages, and it makes sense to aggregate 
+; its CSS.
+stylesheets[all][] = g2.css
+
+; Information added by drupal.org packaging script on 2011-08-30
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "g2"
+datestamp = "1314663615"
+

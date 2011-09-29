@@ -1,0 +1,12 @@
+core           = 7.x
+dependencies[] = taxonomy
+description    = "Changes the menu trail of a currently viewed entity to its related term menu item."
+name           = Taxonomy Menu Trails
+package        = Taxonomy Menu
+
+; Information added by drupal.org packaging script on 2011-04-21
+version = "7.x-1.1"
+core = "7.x"
+project = "taxonomy_menu_trails"
+datestamp = "1303407117"
+

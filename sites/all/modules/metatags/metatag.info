@@ -1,0 +1,15 @@
+name = Meta tag API
+description = "Implement an API that other modules can use to add meta tags."
+package = Meta tags
+core = 7.x
+files[] = metatag.inc
+files[] = metatag.test
+dependencies[] = token
+dependencies[] = ctools
+
+; Information added by drupal.org packaging script on 2011-08-19
+version = "7.x-1.0-unstable1"
+core = "7.x"
+project = "metatags"
+datestamp = "1313764919"
+

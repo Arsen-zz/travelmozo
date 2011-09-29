@@ -1,0 +1,74 @@
+[28-Aug-2011 18:54:01] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 3
+[28-Aug-2011 18:54:03] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 3
+[28-Aug-2011 18:55:34] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 3
+[28-Aug-2011 19:14:01] PHP Fatal error:  Call to undefined function r() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 17
+[28-Aug-2011 19:14:02] PHP Fatal error:  Call to undefined function r() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 17
+[28-Aug-2011 19:14:17] PHP Fatal error:  Call to undefined function r() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 17
+[28-Aug-2011 19:17:43] PHP Parse error:  syntax error, unexpected ']' in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 15
+[28-Aug-2011 19:17:44] PHP Parse error:  syntax error, unexpected ']' in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 15
+[28-Aug-2011 19:20:07] PHP Fatal error:  Cannot use object of type stdClass as array in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 7
+[28-Aug-2011 19:20:08] PHP Fatal error:  Cannot use object of type stdClass as array in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 7
+[29-Aug-2011 15:34:30] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:34:41] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:34:41] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:35:03] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:35:08] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:35:17] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:35:43] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:35:51] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:36:04] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:36:07] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:36:47] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:36:47] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:37:35] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:37:36] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:38:45] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:39:26] PHP Fatal error:  Function name must be a string in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 5
+[29-Aug-2011 15:42:47] PHP Fatal error:  Cannot access empty property in /home/travelmo/public_html/sites/all/modules/ctools/includes/export.inc on line 1057
+[31-Aug-2011 02:28:37] PHP Fatal error:  Call to undefined method views_handler_relationship_groupwise_max::view_aliased() in /home/travelmo/public_html/sites/all/modules/views/handlers/views_handler_relationship_groupwise_max.inc on line 200
+[31-Aug-2011 02:28:45] PHP Fatal error:  Call to undefined method views_handler_relationship_groupwise_max::view_aliased() in /home/travelmo/public_html/sites/all/modules/views/handlers/views_handler_relationship_groupwise_max.inc on line 200
+[31-Aug-2011 02:29:02] PHP Fatal error:  Call to undefined method views_handler_relationship_groupwise_max::view_aliased() in /home/travelmo/public_html/sites/all/modules/views/handlers/views_handler_relationship_groupwise_max.inc on line 200
+[31-Aug-2011 02:59:41] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 02:59:56] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:00:02] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:00:25] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:00:36] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:00:48] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:00:59] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:01] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:09] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:11] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:32] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:35] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:37] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:01:45] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:02:10] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[31-Aug-2011 03:02:46] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 3
+[17-Sep-2011 15:08:12] PHP Fatal error:  Call to undefined function the_title() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 9
+[17-Sep-2011 15:08:17] PHP Fatal error:  Call to undefined function the_title() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 9
+[17-Sep-2011 15:08:40] PHP Fatal error:  Call to undefined function the_title() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 9
+[17-Sep-2011 15:21:36] PHP Fatal error:  Call to undefined function title() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 8
+[17-Sep-2011 15:21:37] PHP Fatal error:  Call to undefined function title() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 8
+[17-Sep-2011 15:21:41] PHP Fatal error:  Call to undefined function title() in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 8
+[19-Sep-2011 00:25:39] PHP Parse error:  syntax error, unexpected '<' in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 7
+[19-Sep-2011 00:25:41] PHP Parse error:  syntax error, unexpected '<' in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 7
+[19-Sep-2011 00:25:43] PHP Parse error:  syntax error, unexpected '<' in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 7
+[21-Sep-2011 02:27:32] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 2
+[21-Sep-2011 02:28:50] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 2
+[21-Sep-2011 02:29:13] PHP Parse error:  syntax error, unexpected $end in /home/travelmo/public_html/sites/all/modules/views/plugins/views_plugin_argument_default_php.inc(49) : eval()'d code on line 2
+[21-Sep-2011 15:30:54] PHP Parse error:  syntax error, unexpected T_ELSE in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 34
+[21-Sep-2011 15:30:59] PHP Parse error:  syntax error, unexpected T_ELSE in /home/travelmo/public_html/modules/php/php.module(74) : eval()'d code on line 34
+[21-Sep-2011 19:45:15] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 19:45:31] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 19:45:55] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 19:47:09] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 19:47:13] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 19:47:53] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 19:52:44] PHP Fatal error:  Call to undefined function danland_page_class() in /home/travelmo/public_html/sites/all/themes/danland/danblog/page.tpl.php on line 5
+[21-Sep-2011 19:53:25] PHP Fatal error:  Call to undefined function danland_page_class() in /home/travelmo/public_html/sites/all/themes/danland/danblog/page.tpl.php on line 5
+[21-Sep-2011 20:09:01] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 20:09:08] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[21-Sep-2011 20:09:11] PHP Fatal error:  Cannot redeclare danland_page_class() (previously declared in /home/travelmo/public_html/sites/all/themes/danland/template.php:3) in /home/travelmo/public_html/sites/all/themes/danland/danblog/template.php on line 14
+[22-Sep-2011 22:34:11] PHP Parse error:  syntax error, unexpected '<' in /home/travelmo/public_html/sites/default/settings.php on line 460
+[27-Sep-2011 12:33:11] PHP Fatal error:  Class 'panels_display' not found in /home/travelmo/public_html/sites/all/modules/amazon_store/amazon_store.pages_default.inc on line 44
+[27-Sep-2011 13:41:23] PHP Fatal error:  Class 'panels_display' not found in /home/travelmo/public_html/sites/all/modules/amazon_store/amazon_store.pages_default.inc on line 44

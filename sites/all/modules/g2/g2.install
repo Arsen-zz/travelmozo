@@ -1,0 +1,355 @@
+<?php
+/**
+ * @file
+ * Install file for G2 Glossary
+ *
+ * @copyright Copyright (C) 2005-2011 Frederic G. MARAND for Ouest Systèmes Informatiques (OSInet, OSI)
+ *
+ * @license Licensed under the CeCILL, version 2 and General Public License version 2 or later
+ *
+ * License note: G2 is distributed by OSInet to its customers under the
+ * CeCILL 2.0 license. OSInet support services only apply to the module
+ * when distributed by OSInet, not by any third-party further down the
+ * distribution chain.
+ *
+ * If you obtained G2 from drupal.org, that site received it under the General
+ * Public License version 2 or later (GPLv2+) and can therefore distribute it
+ * under the same terms, and so can you and just anyone down the chain as long
+ * as the GPLv2+ terms are abided by, the module distributor in that case being
+ * the drupal.org organization or the downstream distributor, not OSInet.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Add a default body field for the term definition.
+ */
+function g2_install() {
+  node_types_rebuild();
+  $types = node_type_get_types();
+  $t = get_t();
+  node_add_body_field($types[g2\NODETYPE], $t('Definition'));
+}
+
+/**
+ * Implements hook_requirements().
+ *
+ * @param string $phase
+ * @return array
+ */
+function g2_requirements($phase) {
+  $ret = array();
+  if ($phase != 'runtime') {
+    return;
+  }
+
+  // Since it's runtime, t() is available, so no get_t()
+
+  $stats = module_exists('statistics');
+  $count = variable_get('statistics_count_content_views', NULL);
+  if (!$stats && !$count) {
+    $severity = REQUIREMENT_INFO; // this one is a (questionable) choice
+    $value = t('G2 statistics disabled.');
+  }
+  elseif ($stats xor $count) {
+    $severity = REQUIREMENT_WARNING; // this one is inconsistent
+    $value = t('G2 statistics incorrectly configured.');
+  }
+  else { // both on
+    $severity = REQUIREMENT_OK; // optimal
+    $value = t('G2 statistics configured correctly.');
+  }
+
+  $ar = array();
+  $stats_link = array('!link' => url('admin/modules/list'));
+  $ar[] = $stats
+    ? t('<a href="!link">Statistics module</a> installed and activated: OK.', $stats_link)
+    : t('<a href="!link">Statistics module</a> not installed or not activated.', $stats_link);
+  $link_text = $count ? t('ON') : t('OFF');
+  if ($stats) {
+    $link = l($link_text, 'admin/config/system/statistics',
+        array('fragment' => 'statistics_count_content_views'));
+    $ar[] = t('Count content views" setting is !link', array('!link' => $link));
+  }
+  else {
+    $ar[] = t('G2 relies on statistics.module to provide data for the G2 "Top" block and XML-RPC service. If you do not use either block, you can leave statistics.module disabled.');
+  }
+  $description = theme('item_list', array('items' => $ar));
+  $ret['statistics'] = array(
+    'title' => t('G2 statistics'),
+    'value' => $value,
+    'description' => $description,
+    'severity' => $severity,
+  );
+  return $ret;
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * Define the structure of the non-core tables used by G2.
+ *
+ * Schema API does not define it, but thes tables should have UTF-8
+ * as their default charset
+ *
+ * @return array
+ */
+function g2_schema() {
+  $schema = array();
+
+  /**
+   * Additional fields in G2 entries
+   *
+   * G2 does not currently revision the additional information it stores
+   * its entries, so it does not need to keep the vid.
+   */
+  $schema['g2_node'] = array(
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The node id for the current G2 entry',
+      ),
+      'expansion' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'description' => 'Acronym/initialism expansion',
+      ),
+      'period' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => FALSE,
+        'description' => 'A time period during which the entity of concept described by the term was in use',
+      ),
+      'complement' => array(
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'description' => 'Editor-only general information about the item content',
+      ),
+      'origin' => array(
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'description' => 'Editor-only intellectual property-related information about the item content',
+      ),
+    ),
+    'primary key' => array('nid'),
+    'unique keys' => array(),
+    'indexes' => array(),
+    'description' => 'The G2-specific, non-versioned, informations contained in G2 entry nodes in addition to default node content.',
+  );
+
+  /**
+   * G2 per-node referer stats
+   */
+  $schema['g2_referer'] = array(
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The node id for the current G2 entry',
+      ),
+      'referer' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The URL on which a link was found to the current item',
+      ),
+      'incoming' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The number of hits coming from this referer',
+      ),
+    ),
+    'indexes' => array(),
+    'primary key' => array('nid', 'referer'),
+    'unique keys' => array(),
+    'indexes' => array(
+      'referer' => array('referer'),
+    ),
+    'description' => 'The referer tracking table for G2 entries',
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * No drupal_uninstall_schema(): automatic in D7. Just remove variables.
+ */
+function g2_uninstall() {
+  $variables = array();
+
+  $q = db_select('variable', 'v');
+  $q->fields('v', array('name'))
+    ->condition(db_or()
+    ->condition('v.name', 'g2_%', 'LIKE')
+    ->condition('v.name', 'g2/%', 'LIKE')
+  );
+  $result = $q->execute();
+  foreach ($result as $row) {
+    $variables[] = $row->name;
+  }
+  array_walk($variables, 'variable_del');
+  drupal_set_message(st('Removed G2 Glossary variables'), 'status');
+
+  module_load_include('module', 'g2');
+  node_type_delete(G2\NODETYPE);
+}
+
+/**
+ * Update the schema for Drupal 7 first version.
+ *
+ * - remove g2_*[info|title] variables, which were used in block setup. Title is
+ *   managed by core since D6, Info was not really needed.
+ * - have a valid schema version recorded for future updates.
+ *
+ * This is really only needed for sites upgrading from D5.
+ *
+ * Equivalent to the first half of g2_update_6000() in the D6 branch.
+ */
+function g2_update_7000() {
+  // Clean-up obsolete variables
+  $q = db_select('variable', 'v');
+  $q->fields('v', array('name'))
+    ->condition(db_or()
+    ->condition('v.name', 'g2_%info', 'LIKE')
+    ->condition('v.name', 'g2_%title', 'LIKE')
+    ->condition('v.name', 'g2/%', 'LIKE')
+    );
+  $result = $q->execute();
+
+  $count = 0;
+  foreach ($result as $row) {
+    variable_del($row->name);
+    $count++;
+  }
+  $t = get_t();
+  if ($count) {
+    $message = $t('Removed @count G2 obsolete 4.7.x/5.x variables', array('@count' => $count));
+    cache_clear_all('variables', 'cache_bootstrap');
+  }
+  else {
+    $message = $t('No obsolete variable to clean.');
+  }
+  return $message;
+}
+
+/**
+ * Convert Drupal 4.7.x/5.x block deltas.
+ *
+ * This is really only needed for sites upgrading from D5.
+ *
+ * Equivalent to the second half of g2_update_6000() in the D6 branch.
+ */
+function g2_update_7001() {
+  module_load_include('inc', 'g2', 'g2_data');
+  $delta_changes = array(
+    0 => G2\DELTAALPHABAR,
+    1 => G2\DELTARANDOM,
+    2 => G2\DELTATOP,
+    3 => G2\DELTAWOTD,
+    4 => G2\DELTALATEST,
+  );
+  $count = 0;
+  foreach ($delta_changes as $old => $new) {
+    $q = db_update('block')
+      ->fields(array('delta' => $new))
+      ->condition('module', 'g2')
+      ->condition('delta', $old);
+    $count += $q->execute();
+  }
+
+  $t = get_t();
+  if ($count) {
+    $message = $t('Converted G2 block deltas to new format.');
+    cache_clear_all('variables', 'bootstrap');
+  }
+  else {
+    $message = $t('No obsolete delta to convert.');
+  }
+  return $message;
+}
+
+/**
+ * Convert "%" tokens from 4.7.x/5.1.[01] in the WOTD feed configuration to "!".
+ *
+ * This is really only needed for sites upgrading from D4.7 or D5.
+ *
+ * Equivalent to g2_update_6001() in the D6 branch.
+ */
+function g2_update_7002() {
+  $count = 0;
+  $wotd_author = variable_get(G2\VARWOTDFEEDAUTHOR, G2\DEFWOTDFEEDAUTHOR);
+  if (strpos($wotd_author, '%author') !== FALSE) {
+    variable_set(G2\VARWOTDFEEDAUTHOR, str_replace('%author', '!author', $wotd_author));
+    $count++;
+  }
+  $wotd_descr = variable_get(G2\VARWOTDFEEDDESCR, G2\DEFWOTDFEEDDESCR);
+  if (strpos($wotd_descr, '%site') !== FALSE) {
+    variable_set(G2\VARWOTDFEEDDESCR, str_replace('%site', '!site', $wotd_descr));
+    $count++;
+  }
+
+  $t = get_t();
+  if ($count) {
+    $message = $t('Replaced @count occurrences of old "%" tokens by new "!" ones on the <a href="!link">WOTD block feed settings</a>.', array(// coder false positive: !link is filtered
+      '@count' => $count,
+      '!link' => url('admin/structure/block/configure/g2/' . G2\DELTAWOTD),
+    ));
+  }
+  else {
+    $message = $t('No old token to convert for the WOTD feed settings.');
+  }
+  return $message;
+}
+
+/**
+ * Temporarily restore the g2_referer table: unlike the D5 branch, the current
+ * code in the D6 and D7 branches still use it. The DRUPAL-7--2 branch will
+ * likely remove it as in D5.
+ *
+ * This is really only needed for sites upgrading from D5.
+ *
+ * Equivalent to g2_update_6002() in the D6 branch.
+ */
+function g2_update_7003() {
+  $ret = array();
+  $t = get_t();
+  if (!db_table_exists('g2_referer')) {
+    $message = $t("Temporarily reinstating g2_referer table for current version. In future versions, use an external tracking module instead.");
+    $schema = g2_schema();
+    db_create_table('g2_referer', $schema['g2_referer']);
+  }
+  else {
+    $message = $t('g2_referer table was there. No need to recreate it.');
+  }
+  return $message;
+}
+
+/**
+ * Remove obsolete variable g2_nofreetagging.
+ */
+function g2_update_7004() {
+  variable_del('g2_nofreetagging');
+  $t = get_t();
+  return $t('Removed obsolete variable g2_nofreetagging');
+}
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function g2_update_last_removed() {
+  return 6002;
+}
+

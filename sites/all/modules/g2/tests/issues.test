@@ -1,0 +1,97 @@
+<?php
+/**
+ * @file
+ * Test for regression of fixed issues
+ */
+
+class G2IssuesTest extends DrupalWebTestCase {
+  static $group = 'Initialization';
+
+  /**
+   * Admin account, used for privileged operations
+   *
+   * @var object
+   */
+  public $admin;
+
+  static function getInfo() {
+    $ret = array(
+      'name'  => t('G2 non-regression tests'),
+      'description'  => t('Test once-fixed issues to catch regressions'),
+      'group' => t('G2 Glossary'),
+    );
+    return $ret;
+  }
+
+  public function setUp() {
+    parent::setUp('taxonomy', 'g2');
+    $this->admin = $this->drupalCreateUser(array(g2\PERMVIEW, g2\PERMADMIN, 'create ' . g2\NODETYPE . ' content'));
+  }
+
+  public function createG2Format($format_name, $filter_name) {
+    $g2_format = (object) array(
+      'format' => $format_name,
+      'name' => 'Text with G2 format',
+      // 'Plain text' format is installed with a weight of 10 by default. Use a
+      // higher weight here to ensure that this format will not be the default
+      // format for anyone. PHP has 11
+      'weight' => 12,
+      'filters' => array(
+        // Enable the PHP evaluator filter.
+        $filter_name => array(
+          'weight' => 0,
+          'status' => 1,
+        ),
+      ),
+    );
+    $sts = filter_format_save($g2_format);
+    $this->assertEqual($sts, SAVED_NEW, t('Created new format %format including filter %filter', array(
+      '%format' => $format_name,
+      '%filter' => $filter_name,
+      )), self::$group);
+  }
+
+  /**
+   * HTML test being generated in the "title" attribute on node auto-creation.
+   */
+  public function test1243170_7() {
+    variable_set(g2\VARREMOTEG2, '<local>');
+    variable_set(g2\VARTOOLTIPS, TRUE);
+
+    $format_name = 'format_g2'; // Default format on testing profile
+    $filter_name = 'filter_g2';
+    $this->createG2Format($format_name, $filter_name);
+
+    $settings = array(
+      'type' => g2\NODETYPE,
+      'title' => 'CSS',
+      'body' => array(LANGUAGE_NONE => array(array(
+        'value' => 'A style language for <dfn>HTML</dfn>',
+        'format' => $format_name,
+      ))),
+    );
+    $node = $this->drupalCreateNode($settings);
+
+    self::$group = t('User interaction');
+    $this->drupalLogin($this->admin);
+    $this->drupalGet("node/$node->nid");
+    $this->assertLink('HTML', 0, t('Found G2 "HTML" link on node page'), self::$group);
+    $link = $this->xpath("//a[@class='g2-dfn-link']");
+    if (empty($link)) {
+      return;
+    }
+
+    $attributes = $link[0]->attributes();
+    $href = (string) $attributes['href'];
+    $this->drupalGet($href);
+    $this->assertLink('create', 0, t('Found G2 "create" link on g2/entries/HTML'), self::$group);
+    $link = $this->xpath('//a[text()="create"]');
+    if (empty($link)) {
+      return;
+    }
+
+    $attributes = $link[0]->attributes();
+    $href = (string) $attributes['href'];
+    $this->assertEqual($href, url('node/add/g2-entry/HTML'), t('Found G2 node creation link on g2/entries/HTML'), self::$group);
+  }
+}

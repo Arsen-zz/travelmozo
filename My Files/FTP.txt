@@ -1,0 +1,19 @@
+FTP Access
+use filezilla
+
+Host: 46.105.98.59
+Port: 2141
+Explicit TLS
+user: theme@travelmozo.com
+Pwd: Ajay1975
+
+Drupal Admin Access:
+Username: jo
+Pwd: Ajay1975
+
+---------- Forwarded message ----------
+From: ajay@aksingh.com <ajay@aksingh.com>
+Date: Tue, Sep 27, 2011 at 4:49 PM
+Subject: Drupal Project
+To: vaso@sfdev.com
+

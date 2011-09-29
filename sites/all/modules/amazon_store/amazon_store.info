@@ -1,0 +1,16 @@
+
+name = Amazon Store
+description = Amazon shopping cart and searching 
+package = Amazon
+dependencies[] = amazon
+core = 7.x
+php = 5.2
+configure = admin/config/amazon_settings/amazon_store
+files[] = searchindexes.inc
+
+; Information added by drupal.org packaging script on 2011-02-28
+version = "7.x-1.0-beta4"
+core = "7.x"
+project = "amazon_store"
+datestamp = "1298868967"
+
