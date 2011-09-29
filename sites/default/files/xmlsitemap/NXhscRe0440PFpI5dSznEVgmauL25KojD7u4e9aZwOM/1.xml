@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>http://www.travelmozo.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://www.travelmozo.com/forums/agra/subject</loc><lastmod>2011-08-28T12:47Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>http://www.travelmozo.com/asia/india/agra</loc><lastmod>2011-08-30T22:02Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/forums/agra/best-time-visit-taj-mahal</loc><lastmod>2011-08-29T16:38Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>http://www.travelmozo.com/forums/bangkok/cheap-hotel-bangkok</loc><lastmod>2011-08-30T21:20Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>http://www.travelmozo.com/asia</loc><lastmod>2011-08-30T23:17Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/europe</loc><lastmod>2011-08-30T22:55Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/africa</loc><lastmod>2011-08-30T23:11Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/about-us</loc><lastmod>2011-09-17T13:00Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>http://www.travelmozo.com/basic-page/home-page</loc><lastmod>2011-09-17T13:03Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://www.travelmozo.com/articles/origins-of-traditional-thai-massage</loc><lastmod>2011-09-16T22:21Z</lastmod><changefreq>daily</changefreq></url>
+<url><loc>http://www.travelmozo.com/terms</loc><lastmod>2011-09-17T15:21Z</lastmod><changefreq>daily</changefreq><priority>0.1</priority></url>
+<url><loc>http://www.travelmozo.com/chiang-mai/attractions/wat-doi-suthep</loc><lastmod>2011-09-17T19:19Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>http://www.travelmozo.com/chiang-mai</loc><lastmod>2011-09-17T19:26Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/thailand</loc><lastmod>2011-09-17T19:29Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/bangkok/attractions/little-arabia-bangkok</loc><lastmod>2011-09-17T20:56Z</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+<url><loc>http://www.travelmozo.com/destinations/bangkok-0</loc><lastmod>2011-09-17T19:43Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/forums/varanasi/cheap-varanasi-hotels</loc><lastmod>2011-08-28T18:41Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>http://www.travelmozo.com/destinations</loc><lastmod>2011-08-30T22:02Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/destinations/asia-0</loc><lastmod>2011-08-28T22:00Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/asia/india</loc><lastmod>2011-08-31T00:49Z</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/uttar-pradesh</loc><lastmod>2011-09-17T15:30Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/varanasi</loc><lastmod>2011-09-17T15:31Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.travelmozo.com/users/admintm</loc><priority>0.4</priority></url>
+<url><loc>http://www.travelmozo.com/users/jo</loc><priority>0.4</priority></url>
+<url><loc>http://www.travelmozo.com/users/john</loc><priority>0.4</priority></url>
+<url><loc>http://www.travelmozo.com/users/ajay</loc><priority>0.4</priority></url>
+<url><loc>http://www.travelmozo.com/users/derek</loc><priority>0.4</priority></url>
+<url><loc>http://www.travelmozo.com/users/jesse</loc><priority>0.4</priority></url>
+</urlset>
